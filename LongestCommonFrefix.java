@@ -10,14 +10,15 @@ public class LongestCommonFrefix {
 		String str1 = input.nextLine();
 		System.out.println("Enter the second String :");
 		String str2 = input.nextLine();
-
+		boolean check = false;
 		if (str1.length() >= str2.length()) {
 			for (int i = str2.length() - 1; i >= 0; i--) {
 				String temp = str2.substring(0, i);
 				if (str1.contains(temp)) {
 					System.out
-							.println("Longest Common Prefix of two String is "
+							.println("Longest Common Prefix of two Strings is "
 									+ str2.substring(0, i));
+					check = true;
 					break;
 				}
 			}
@@ -26,11 +27,15 @@ public class LongestCommonFrefix {
 				String temp = str1.substring(0, i);
 				if (str2.contains(temp)) {
 					System.out
-							.println("Longest Common Prefix of two String is "
+							.println("Longest Common Prefix of two Strings is "
 									+ str1.substring(0, i));
+					check = true;
 					break;
 				}
 			}
+		}
+		if (check) {
+			System.out.println("There is no common prefix btw stwo strings");
 		}
 	}
 }
