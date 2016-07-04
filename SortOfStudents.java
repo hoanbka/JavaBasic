@@ -15,7 +15,7 @@ public class SortOfStudents {
 
 		String[] names = new String[number];
 		int[] scores = new int[number];
-		
+
 		input.nextLine();
 		System.out.println("Enter data of each student :");
 		for (int i = 0; i <= number - 1; i++) {
@@ -23,7 +23,6 @@ public class SortOfStudents {
 			scores[i] = input.nextInt();
 			input.nextLine();
 		}
-
 
 		for (int i = 0; i < number - 1; i++) {
 			for (int j = i + 1; j < number; j++) {
@@ -42,6 +41,23 @@ public class SortOfStudents {
 		for (int i = 0; i < number; i++) {
 			System.out.println(names[i] + "      , score : " + scores[i]);
 		}
+
+		// Find the second high score
+		int the2ndMaxScore = scores[0];
+		for (int i = 0; i < number; i++) {
+			if (scores[i] < scores[0]) {
+				the2ndMaxScore = scores[i];
+				break;
+			}
+		}
+		System.out.println("The second high score = " + the2ndMaxScore
+				+ " of below students :");
+		for (int i = 0; i < number; i++) {
+			if (scores[i] == the2ndMaxScore) {
+				System.out.println(names[i]);
+			}
+		}
+
 	}
 
 }
