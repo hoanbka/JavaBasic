@@ -21,10 +21,10 @@ public class PatternRecognition {
 		System.out.println("Enter the length of the array with length >=4:");
 		Scanner input = new Scanner(System.in);
 		int number = input.nextInt();
-		int values[] = new int[number];
-		if (number < 3) {
+		if (number <= 3) {
 			System.out.println("The list has NO consecutive fours haha");
 		} else {
+			int values[] = new int[number];
 			System.out.println("Enter each number to the array :");
 			for (int i = 0; i < values.length; i++) {
 				values[i] = input.nextInt();
